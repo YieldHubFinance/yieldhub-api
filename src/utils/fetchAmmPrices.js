@@ -3,20 +3,8 @@ const { ethers } = require('ethers');
 const { MULTICHAIN_RPC } = require('../constants');
 
 const MULTICALLS = {
-  56: '0xbcf79F67c2d93AD5fd1b919ac4F5613c493ca34F',
-  128: '0x6066F766f47aC8dbf6F21aDF2493316A8ACB7e34',
-  137: '0x2D955C68f8c687242d7475cD0Cc86E6a4A6D968e',
-  250: '0xd9F2Da642FAA1307e4F70a5E3aC31b9bfe920eAF',
   43114: '0xF7d6f0418d37B7Ec8D207fF0d10897C2a3F92Ed5',
-  1666600000: '0xa9E6E271b27b20F65394914f8784B3B860dBd259',
-  42161: '0x405EE7F4f067604b787346bC22ACb66b06b15A4B',
-  42220: '0xE99c8A590c98c7Ae9FB3B7ecbC115D2eBD533B50',
-  1285: '0x8a198BCbF313A5565c64A7Ed61FaA413eB4E0931',
-  25: '0x405EE7F4f067604b787346bC22ACb66b06b15A4B',
-  1313161554: '0xFE40f6eAD11099D91D51a945c145CFaD1DD15Bb8',
-  122: '0xE99c8A590c98c7Ae9FB3B7ecbC115D2eBD533B50',
-  1088: '0xfcDD5a02C611ba6Fe2802f885281500EC95805d7',
-  1284: '0xd9F2Da642FAA1307e4F70a5E3aC31b9bfe920eAF',
+  40: '0x86ab88626DcDE200D2D8474780F6Dc0085484225',
 };
 
 const MulticallAbi = require('../abis/BeefyPriceMulticall.json');
@@ -61,11 +49,6 @@ const fetchAmmPrices = async (pools, knownPrices) => {
   for (let chain in MULTICALLS) {
     let filtered = pools.filter(p => p.chainId == chain);
 
-    // Old BSC pools don't have the chainId attr
-    if (chain == '56') {
-      filtered = pools.filter(p => p.chainId === undefined).concat(filtered);
-    }
-
     // Setup multichain
     const provider = new ethers.providers.JsonRpcProvider(MULTICHAIN_RPC[chain]);
     const multicall = new ethers.Contract(MULTICALLS[chain], MulticallAbi, provider);
@@ -80,7 +63,7 @@ const fetchAmmPrices = async (pools, knownPrices) => {
       } catch (e) {
         console.error('fetchAmmPrices', e);
       }
-
+      
       // Merge fetched data
       for (let j = 0; j < batch.length; j++) {
         filtered[j + i].totalSupply = new BigNumber(buf[j * 3 + 0]?.toString());
@@ -114,6 +97,7 @@ const fetchAmmPrices = async (pools, knownPrices) => {
           knownToken,
           unknownToken
         );
+
         if (weight > (weights[unknownToken.oracleId] || 0)) {
           prices[unknownToken.oracleId] = price;
           weights[unknownToken.oracleId] = weight;

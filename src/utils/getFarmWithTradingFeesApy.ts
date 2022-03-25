@@ -5,10 +5,10 @@ export const getFarmWithTradingFeesApy = (
   tradingApr: number | undefined,
   compoundingsPerYear,
   t,
-  shareAfterBeefyPerformanceFee
+  shareAfterYieldHubPerformanceFee
 ) => {
   const farmApy = farmApr
-    ? compound(farmApr, compoundingsPerYear, t, shareAfterBeefyPerformanceFee)
+    ? compound(farmApr, compoundingsPerYear, t, shareAfterYieldHubPerformanceFee)
     : 0;
   const finalAPY = (1 + farmApy) * (1 + Number(tradingApr || 0)) - 1;
   return finalAPY;

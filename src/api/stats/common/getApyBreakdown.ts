@@ -3,12 +3,12 @@ import BigNumber from 'bignumber.js';
 import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
 import { compound } from '../../../utils/compound';
 
-import { BASE_HPY, BEEFY_PERFORMANCE_FEE, SHARE_AFTER_PERFORMANCE_FEE } from '../../../constants';
+import { BASE_HPY, YIELDHUB_PERFORMANCE_FEE, SHARE_AFTER_PERFORMANCE_FEE } from '../../../constants';
 
 export interface ApyBreakdown {
   vaultApr?: number;
   compoundingsPerYear?: number;
-  beefyPerformanceFee?: number;
+  yieldHubPerformanceFee?: number;
   vaultApy?: number;
   lpFee?: number;
   tradingApr?: number;
@@ -25,7 +25,7 @@ export const getApyBreakdown = (
   tradingAprs: Record<string, BigNumber>,
   farmAprs: BigNumber[],
   providerFee: number,
-  performanceFee: number = BEEFY_PERFORMANCE_FEE
+  performanceFee: number = YIELDHUB_PERFORMANCE_FEE
 ): ApyBreakdownResult => {
   const result: ApyBreakdownResult = {
     apys: {},
@@ -50,7 +50,7 @@ export const getApyBreakdown = (
     result.apyBreakdowns[pool.name] = {
       vaultApr: vaultApr,
       compoundingsPerYear: BASE_HPY,
-      beefyPerformanceFee: performanceFee,
+      yieldHubPerformanceFee: performanceFee,
       vaultApy: vaultApy,
       lpFee: providerFee,
       tradingApr: tradingApr,
