@@ -1,8 +1,8 @@
 export const telosPools = [
   {
-    id: 'telos-usdt-usdc-bct',
-    name: 'USDT-USDC LP',
-    token: 'USDT-USDC LP',
+    id: 'telos-usdc-usdt-bct',
+    name: 'USDC-USDT LP',
+    token: 'USDC-USDT LP',
     tokenDescription: 'OmniDex',
     tokenAddress: '0x8805F519663E47aBd6adbA4303639f69e51fd112',
     tokenDecimals: 18,
@@ -18,7 +18,7 @@ export const telosPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'OmniDex',
-    assets: ['USDT', 'USDC'],
+    assets: ['USDC', 'USDT'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
