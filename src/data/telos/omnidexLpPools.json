@@ -1,0 +1,59 @@
+[
+  {
+    "name": "omni-usdc-usdt",
+    "address": "0x8805F519663E47aBd6adbA4303639f69e51fd112",
+    "decimals": "1e18",
+    "poolId": 10,
+    "chainId": 40,
+    "lp0": {
+      "address": "0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b",
+      "oracle": "tokens",
+      "oracleId": "USDC",
+      "decimals": "1e18"
+    },
+    "lp1": {
+      "address": "0xefaeee334f0fd1712f9a8cc375f427d9cdd40d73",
+      "oracle": "tokens",
+      "oracleId": "USDT",
+      "decimals": "1e18"
+    }
+  },
+  {
+    "name": "omni-tlos-charm",
+    "address": "0x933F83735f26e51c61955b4fCA88F13fbd423A0C",
+    "decimals": "1e18",
+    "poolId": 1,
+    "chainId": 40,
+    "lp0": {
+      "address": "0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E",
+      "oracle": "tokens",
+      "oracleId": "WTLOS",
+      "decimals": "1e18"
+    },
+    "lp1": {
+      "address": "0xd2504a02fABd7E546e41aD39597c377cA8B0E1Df",
+      "oracle": "tokens",
+      "oracleId": "CHARM",
+      "decimals": "1e18"
+    }
+  },
+  {
+    "name": "omni-usdc-tlos",
+    "address": "0x651Fcc98a348C91FDF087903c25A638a25344dFf",
+    "decimals": "1e18",
+    "poolId": 1,
+    "chainId": 40,
+    "lp0": {
+      "address": "0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b",
+      "oracle": "tokens",
+      "oracleId": "USDC",
+      "decimals": "1e18"
+    },
+    "lp1": {
+      "address": "0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E",
+      "oracle": "tokens",
+      "oracleId": "WTLOS",
+      "decimals": "1e18"
+    }
+  }
+]
