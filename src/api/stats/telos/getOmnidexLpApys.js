@@ -28,51 +28,22 @@ const getOmnidexLpApys = async () => {
   let apyBreakdowns = {};
 
   const tokenPrice = await fetchPrice({ oracle, id: oracleId });
-
-  console.log("Token Price: ", tokenPrice);
   const { rewardPerSecond, totalAllocPoint } = await getZenMasterData();
-  console.log("Reward Per Second: ", rewardPerSecond);
-  console.log("Total Alloc Point: ", totalAllocPoint);
-
   const { balances, allocPoints } = await getPoolsData(pools);
-
-  console.log("Balances: ", balances);
-  console.log("Alloc Points: ", allocPoints);
-
   const pairAddresses = pools.map(pool => pool.address);
 
   for (let i = 0; i < pools.length; i++) {
 
     const pool = pools[i];
 
-    console.log("Pool: ", pool);
-
     const lpPrice = await fetchPrice({ oracle: 'lps', id: pool.name });
-
-    console.log("LP Price: ", lpPrice);
-
     const totalStakedInUsd = balances[i].times(lpPrice).dividedBy('1e18');
-
-    console.log("Total Staked in USD: ", totalStakedInUsd);
-
     const poolBlockRewards = rewardPerSecond.times(allocPoints[i]).dividedBy(totalAllocPoint);
-    console.log("Pool Block Rewards: ", poolBlockRewards);
-
     const yearlyRewards = poolBlockRewards.dividedBy(secondsPerBlock).times(secondsPerYear);
-    console.log("Yearly Rewards: ", yearlyRewards);
-
     const yearlyRewardsInUsd = yearlyRewards.times(tokenPrice).dividedBy(DECIMALS).dividedBy(2);
-    console.log("Yearly Rewards in USD: ", yearlyRewardsInUsd);
-
     const simpleApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
-    console.log("Simple APY: ", simpleApy);
-
     const vaultApr = simpleApy.times(shareAfterYieldHubPerformanceFee);
-    console.log("Vault APR: ", vaultApr);
-
     const vaultApy = compound(simpleApy, BASE_HPY, 1, shareAfterYieldHubPerformanceFee);
-    console.log("Vault APY: ", vaultApy);
-
     const tradingApr = new BigNumber(0);
     const totalApy = getFarmWithTradingFeesApy(
       simpleApy,
@@ -81,7 +52,6 @@ const getOmnidexLpApys = async () => {
       1,
       shareAfterYieldHubPerformanceFee
     );
-    // console.log(pool.name, simpleApy.valueOf(), tradingApr.valueOf(), apy, totalStakedInUsd.valueOf(), yearlyRewardsInUsd.valueOf());
 
     // Create reference for legacy /apy
     const legacyApyValue = { [pool.name]: totalApy };

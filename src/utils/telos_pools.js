@@ -1,6 +1,6 @@
 export const telosPools = [
   {
-    id: 'telos-usdc-usdt-bct',
+    id: 'omni-usdc-usdt',
     name: 'USDC-USDT LP',
     token: 'USDC-USDT LP',
     tokenDescription: 'OmniDex',

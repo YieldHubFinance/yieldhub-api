@@ -39,8 +39,6 @@ const updateAmmPrices = async () => {
     await tokenPrices;
     await lpPrices;
 
-    console.log("token Prices; ", tokenPrices);
-    console.log("LP prices: ", lpPrices);
     tokenPricesCache = tokenPrices;
     lpPricesCache = lpPrices;
 

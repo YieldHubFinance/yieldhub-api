@@ -61,7 +61,6 @@ const getVaultBalances = async (chainId, vaults) => {
     });
   });
   const res = await multicall.all([balanceCalls]);
-  console.log(res);
   return res[0].map(v => new BigNumber(v.balance));
 };
 
