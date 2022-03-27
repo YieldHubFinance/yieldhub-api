@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "install-all": "yarn && cd packages/address-book && yarn",
-    "start": "NODE_PATH=./build node build/app.js",
+    "start": "node dist/src/app.js",
     "dev": "nodemon -e js,ts,json src/app.ts",
     "build": "tsc -p .",
     "test": "nyc ava",
