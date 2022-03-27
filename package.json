@@ -5,8 +5,9 @@
   "license": "MIT",
   "scripts": {
     "install-all": "yarn && cd packages/address-book && yarn",
-    "start": "ts-node src/app.ts",
+    "start": "node dist/src/app.js",
     "dev": "nodemon -e js,ts,json src/app.ts",
+    "build": "tsc -p .",
     "test": "nyc ava",
     "prettier:check": "prettier --check src/**/*",
     "prettier:fix": "prettier --write src/**/*",

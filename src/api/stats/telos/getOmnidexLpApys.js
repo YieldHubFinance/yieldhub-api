@@ -33,7 +33,6 @@ const getOmnidexLpApys = async () => {
   const pairAddresses = pools.map(pool => pool.address);
 
   for (let i = 0; i < pools.length; i++) {
-
     const pool = pools[i];
 
     const lpPrice = await fetchPrice({ oracle: 'lps', id: pool.name });
