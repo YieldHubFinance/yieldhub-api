@@ -54,7 +54,7 @@
 		"decimals": "1e18"
 	}
 }, {
-	"name": "omnidex-tlos-wbtc",
+	"name": "omnidex-wtlos-wbtc",
 	"address": "0x427E9A7bb848444a72faA3248c48F3B302429725",
 	"decimals": "1e18",
 	"poolId": 4,
@@ -216,7 +216,7 @@
 		"decimals": "1e18"
 	}
 }, {
-	"name": "omnidex-karma-tlos",
+	"name": "omnidex-karma-wtlos",
 	"address": "0xC72ca4D9Ef358E1d8989e36dF9dFA28378137D20",
 	"decimals": "1e18",
 	"poolId": 27,
