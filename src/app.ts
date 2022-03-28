@@ -1,18 +1,20 @@
 'use strict';
 
-const Koa = require('koa');
-const helmet = require('koa-helmet');
-const body = require('koa-bodyparser');
 const cors = require('@koa/cors');
+const Koa = require('koa');
+const body = require('koa-bodyparser');
+const compress = require('koa-compress');
 const conditional = require('koa-conditional-get');
 const etag = require('koa-etag');
+const helmet = require('koa-helmet');
 
-const rt = require('./middleware/rt');
 const powered = require('./middleware/powered');
+const rt = require('./middleware/rt');
 const router = require('./router');
 
 const app = new Koa();
 
+app.use(compress());
 app.use(rt);
 app.use(conditional());
 app.use(etag());
