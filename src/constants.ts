@@ -1,5 +1,5 @@
 import { ChainId } from '../packages/address-book/address-book';
-import { telosPools } from './utils/telos_pools';
+import { telosPools } from './utils/telosPools';
 
 const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:3000';
 
