@@ -16,7 +16,7 @@ const zenmaster = '0x79f5A8BD0d6a00A41EA62cdA426CEf0115117a61';
 const oracleId = 'CHARM';
 const oracle = 'tokens';
 const DECIMALS = '1e18';
-const secondsPerBlock = 1;
+const secondsPerBlock = 0.5;
 const secondsPerYear = 31536000;
 
 const liquidityProviderFee = OMNIDEX_LPF;
