@@ -234,6 +234,15 @@ const _tokens = {
     logoURI:
       'https://raw.githubusercontent.com/OmniDexFinance/tokenLogo/master/0x730d2fa7dc7642e041bce231e85b39e9bf4a6a64/logo.png',
   },
+  WONE: {
+    name: 'WONE Harmony',
+    symbol: 'WONE',
+    address: '0x0caE51e1032e8461f4806e26332c030E34De3aDb',
+    chainId: 40,
+    decimals: 18,
+    logoURI:
+      'https://raw.githubusercontent.com/elkfinance/tokens/main/logos/harmony/0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a/logo.png',
+  },
 } as const;
 
 export const tokens: ConstRecord<typeof _tokens, Token> = _tokens;
