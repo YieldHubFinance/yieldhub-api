@@ -4,13 +4,22 @@ import Token from '../../../types/token';
 const TLOS = {
   chainId: 40,
   address: '0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E',
-  symbol: 'WTLOS',
-  name: 'Wrapped TLOS',
+  symbol: 'TLOS',
+  name: 'TLOS',
   logoURI: 'https://raw.githubusercontent.com/telosnetwork/images/master/logos_2021/Symbol%202.svg',
   decimals: 18,
 } as const;
 
 const _tokens = {
+  WTLOS: {
+    chainId: 40,
+    address: '0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E',
+    symbol: 'WTLOS',
+    name: 'Wrapped TLOS',
+    logoURI:
+      'https://raw.githubusercontent.com/telosnetwork/images/master/logos_2021/Symbol%202.svg',
+    decimals: 18,
+  },
   WBTC: {
     name: 'Wrapped BTC',
     symbol: 'WBTC',
@@ -19,7 +28,7 @@ const _tokens = {
     decimals: 8,
     logoURI: 'https://cryptologos.cc/logos/wrapped-bitcoin-wbtc-logo.png',
   },
-  ETH: {
+  WETH: {
     name: 'Ethereum',
     symbol: 'ETH',
     address: '0xfA9343C3897324496A05fC75abeD6bAC29f8A40f',
@@ -206,6 +215,24 @@ const _tokens = {
     chainId: 40,
     decimals: 18,
     logoURI: 'https://gat.network/gat-logo-200x200.png',
+  },
+  ELK: {
+    name: 'ELK Token',
+    symbol: 'ELK',
+    address: '0xE1C110E1B1b4A1deD0cAf3E42BfBdbB7b5d7cE1C',
+    chainId: 40,
+    decimals: 18,
+    logoURI:
+      'https://raw.githubusercontent.com/elkfinance/tokens/main/logos/telos/0xE1C110E1B1b4A1deD0cAf3E42BfBdbB7b5d7cE1C/logo.png',
+  },
+  KARMA: {
+    name: 'KARMA token on omnidex',
+    symbol: 'KARMA',
+    address: '0x730d2Fa7dC7642E041bcE231E85b39e9bF4a6a64',
+    chainId: 40,
+    decimals: 18,
+    logoURI:
+      'https://raw.githubusercontent.com/OmniDexFinance/tokenLogo/master/0x730d2fa7dc7642e041bce231e85b39e9bf4a6a64/logo.png',
   },
 } as const;
 
