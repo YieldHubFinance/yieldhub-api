@@ -14,7 +14,7 @@ const _tokens = {
   WBTC: {
     name: 'Wrapped BTC',
     symbol: 'WBTC',
-    address: '0xf390830df829cf22c53c8840554b98eafc5dcbc2',
+    address: '0xf390830DF829cf22c53c8840554B98eafC5dCBc2',
     chainId: 40,
     decimals: 8,
     logoURI: 'https://cryptologos.cc/logos/wrapped-bitcoin-wbtc-logo.png',
@@ -22,7 +22,7 @@ const _tokens = {
   ETH: {
     name: 'Ethereum',
     symbol: 'ETH',
-    address: '0xfa9343c3897324496a05fc75abed6bac29f8a40f',
+    address: '0xfA9343C3897324496A05fC75abeD6bAC29f8A40f',
     chainId: 40,
     decimals: 18,
     logoURI: 'https://cryptologos.cc/logos/ethereum-eth-logo.png',
@@ -30,7 +30,7 @@ const _tokens = {
   USDC: {
     name: 'USD Coin',
     symbol: 'USDC',
-    address: '0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b',
+    address: '0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b',
     chainId: 40,
     decimals: 6,
     logoURI: 'ipfs://QmXfzKRvjZz3u5JRgC4v5mGVbm9ahrUiB4DgzHBsnWbTMM',
@@ -38,7 +38,7 @@ const _tokens = {
   USDT: {
     name: 'Tether Stable Coin',
     symbol: 'USDT',
-    address: '0xefaeee334f0fd1712f9a8cc375f427d9cdd40d73',
+    address: '0xeFAeeE334F0Fd1712f9a8cc375f427D9Cdd40d73',
     chainId: 40,
     decimals: 6,
     logoURI:
@@ -47,7 +47,7 @@ const _tokens = {
   AVAX: {
     name: 'Avalanche',
     symbol: 'AVAX',
-    address: '0x7c598c96d02398d89fbcb9d41eab3df0c16f227d',
+    address: '0x7C598c96D02398d89FbCb9d41Eab3DF0C16F227D',
     chainId: 40,
     decimals: 18,
     logoURI:
@@ -56,7 +56,7 @@ const _tokens = {
   BNB: {
     name: 'Binance Coin',
     symbol: 'BNB',
-    address: '0x2c78f1b70ccf63cdee49f9233e9faa99d43aa07e',
+    address: '0x2C78f1b70Ccf63CDEe49F9233e9fAa99D43AA07e',
     chainId: 40,
     decimals: 18,
     logoURI:
@@ -65,7 +65,7 @@ const _tokens = {
   FTM: {
     name: 'Fantom',
     symbol: 'FTM',
-    address: '0xc1be9a4d5d45beeacae296a7bd5fadbfc14602c4',
+    address: '0xC1Be9a4D5D45BeeACAE296a7BD5fADBfc14602C4',
     chainId: 40,
     decimals: 18,
     logoURI:
@@ -74,7 +74,7 @@ const _tokens = {
   MATIC: {
     name: 'Polygon',
     symbol: 'MATIC',
-    address: '0x332730a4f6e03d9c55829435f10360e13cfa41ff',
+    address: '0x332730a4F6E03D9C55829435f10360E13cfA41Ff',
     chainId: 40,
     decimals: 18,
     logoURI:
@@ -83,7 +83,7 @@ const _tokens = {
   SUSHI: {
     name: 'Sushi',
     symbol: 'SUSHI',
-    address: '0x922d641a426dcffaef11680e5358f34d97d112e1',
+    address: '0x922D641a426DcFFaeF11680e5358F34d97d112E1',
     chainId: 40,
     decimals: 18,
     logoURI: 'https://cryptologos.cc/logos/sushiswap-sushi-logo.png',
@@ -117,7 +117,7 @@ const _tokens = {
   JRS: {
     name: 'Jesse Rocket Super Coin',
     symbol: 'JRS',
-    address: '0x47be534f78c6408b454d36e75415249ad8d10a60',
+    address: '0x47Be534f78c6408b454d36E75415249aD8d10a60',
     chainId: 40,
     decimals: 18,
     logoURI:
@@ -185,7 +185,7 @@ const _tokens = {
   PLOU: {
     name: 'Ploutus',
     symbol: 'PLOU',
-    address: '0x8b377acebccf930fec65e9ccb693bdb1be3fd3c0',
+    address: '0x8b377ACEBccF930Fec65E9ccB693bDB1Be3Fd3c0',
     chainId: 40,
     decimals: 18,
     logoURI:
