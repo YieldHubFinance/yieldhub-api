@@ -1,5 +1,5 @@
 {
-  "name": "@yieldhub-finance/blockchain-addressbook",
+  "name": "@yieldhubfinance/blockchain-addressbook",
   "version": "0.1.0",
   "description": "A collection of useful addresses on various chains for defi development",
   "main": "build/address-book/index.js",
