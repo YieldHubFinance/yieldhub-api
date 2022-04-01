@@ -19,11 +19,7 @@ export const telosPools = [
     status: 'active',
     platform: 'OmniDex',
     assets: ['WTLOS', 'CHARM'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'CONTRACTS_VERIFIED',
-    ],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'CONTRACTS_VERIFIED'],
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
@@ -51,11 +47,7 @@ export const telosPools = [
     status: 'active',
     platform: 'OmniDex',
     assets: ['WTLOS', 'WETH'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'CONTRACTS_VERIFIED',
-    ],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'CONTRACTS_VERIFIED'],
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
@@ -83,11 +75,7 @@ export const telosPools = [
     status: 'active',
     platform: 'OmniDex',
     assets: ['WTLOS', 'WBTC'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'CONTRACTS_VERIFIED',
-    ],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'CONTRACTS_VERIFIED'],
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
@@ -101,7 +89,7 @@ export const telosPools = [
     token: 'USDC-USDT LP',
     tokenDescription: 'OmniDex',
     tokenAddress: '0x8805F519663E47aBd6adbA4303639f69e51fd112',
-    tokenDecimals: 18,
+    tokenDecimals: 6,
     tokenDescriptionUrl: '#',
     earnedToken: 'yhUSDCUSDT',
     earnedTokenAddress: '0x648b229F82f0aE092fB0e37B0B9524c3D9869e9b',
@@ -115,11 +103,7 @@ export const telosPools = [
     status: 'active',
     platform: 'OmniDex',
     assets: ['USDC', 'USDT'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'CONTRACTS_VERIFIED',
-    ],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'CONTRACTS_VERIFIED'],
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
@@ -147,11 +131,7 @@ export const telosPools = [
     status: 'active',
     platform: 'OmniDex',
     assets: ['BNB', 'WTLOS'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'CONTRACTS_VERIFIED',
-    ],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'CONTRACTS_VERIFIED'],
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
@@ -179,11 +159,7 @@ export const telosPools = [
     status: 'active',
     platform: 'OmniDex',
     assets: ['FTM', 'WTLOS'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'CONTRACTS_VERIFIED',
-    ],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'CONTRACTS_VERIFIED'],
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
@@ -211,11 +187,7 @@ export const telosPools = [
     status: 'active',
     platform: 'OmniDex',
     assets: ['MATIC', 'WTLOS'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'CONTRACTS_VERIFIED',
-    ],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'CONTRACTS_VERIFIED'],
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
@@ -243,11 +215,7 @@ export const telosPools = [
     status: 'active',
     platform: 'OmniDex',
     assets: ['AVAX', 'WTLOS'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'CONTRACTS_VERIFIED',
-    ],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'CONTRACTS_VERIFIED'],
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
@@ -275,11 +243,7 @@ export const telosPools = [
     status: 'active',
     platform: 'OmniDex',
     assets: ['WONE', 'WTLOS'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'CONTRACTS_VERIFIED',
-    ],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'CONTRACTS_VERIFIED'],
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
@@ -307,11 +271,7 @@ export const telosPools = [
     status: 'active',
     platform: 'OmniDex',
     assets: ['KARMA', 'CHARM'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'CONTRACTS_VERIFIED',
-    ],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'CONTRACTS_VERIFIED'],
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
@@ -339,11 +299,7 @@ export const telosPools = [
     status: 'active',
     platform: 'OmniDex',
     assets: ['KARMA', 'ELK'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'CONTRACTS_VERIFIED',
-    ],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'CONTRACTS_VERIFIED'],
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
@@ -371,11 +327,7 @@ export const telosPools = [
     status: 'active',
     platform: 'OmniDex',
     assets: ['KARMA', 'WTLOS'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'CONTRACTS_VERIFIED',
-    ],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'CONTRACTS_VERIFIED'],
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
@@ -403,11 +355,7 @@ export const telosPools = [
     status: 'active',
     platform: 'OmniDex',
     assets: ['KARMA', 'DOUGE'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'CONTRACTS_VERIFIED',
-    ],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'CONTRACTS_VERIFIED'],
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
@@ -435,16 +383,12 @@ export const telosPools = [
     status: 'active',
     platform: 'OmniDex',
     assets: ['DMMY', 'KARMA'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'CONTRACTS_VERIFIED',
-    ],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'CONTRACTS_VERIFIED'],
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://omnidex.finance/add/0x2f15F85a6c346C0a2514Af70075259e503E7137B/0x730d2Fa7dC7642E041bcE231E85b39e9bF4a6a64',
     buyTokenUrl: 'https://omnidex.finance/swap',
     createdAt: 1648413278,
-  }
+  },
 ];
