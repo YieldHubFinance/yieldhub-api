@@ -1,6 +1,6 @@
 {
   "name": "@yieldhubfinance/blockchain-addressbook",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "A collection of useful addresses on various chains for defi development",
   "main": "build/address-book/index.js",
   "types": "build/address-book/index.d.ts",
@@ -26,7 +26,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "ethereumjs-util": "^7.0.10",
-    "lint-staged": "^11.1.2",
+    "lint-staged": "^12.3.7",
     "node-fetch": "^2.6.1",
     "prettier": "^2.3.0",
     "ts-node": "^9.1.1",
