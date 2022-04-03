@@ -36,10 +36,10 @@ const getOmnidexLpApys = async () => {
     const pool = pools[i];
 
     const lpPrice = await fetchPrice({ oracle: 'lps', id: pool.name });
-    const totalStakedInUsd = balances[i].times(lpPrice).dividedBy('1e18');
+    const totalStakedInUsd = balances[i].times(lpPrice).dividedBy(pool.decimals);
     const poolBlockRewards = rewardPerSecond.times(allocPoints[i]).dividedBy(totalAllocPoint);
     const yearlyRewards = poolBlockRewards.dividedBy(secondsPerBlock).times(secondsPerYear);
-    const yearlyRewardsInUsd = yearlyRewards.times(tokenPrice).dividedBy(DECIMALS).dividedBy(2);
+    const yearlyRewardsInUsd = yearlyRewards.times(tokenPrice).dividedBy(DECIMALS);
     const simpleApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
     const vaultApr = simpleApy.times(shareAfterYieldHubPerformanceFee);
     const vaultApy = compound(simpleApy, BASE_HPY, 1, shareAfterYieldHubPerformanceFee);
