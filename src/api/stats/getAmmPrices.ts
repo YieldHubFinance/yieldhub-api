@@ -10,7 +10,10 @@ const REFRESH_INTERVAL = 5 * 60 * 1000;
 
 // FIXME: if this list grows too big we might hit the ratelimit on initialization everytime
 // Implement in case of emergency
-const pools = [...omnidexPools, ...zappyPools];
+const pools = [
+  ...omnidexPools, 
+  ...zappyPools
+];
 
 const knownPrices = {
   USDT: 1,
