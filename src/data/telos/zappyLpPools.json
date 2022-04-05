@@ -38,25 +38,6 @@
     }
   },
   {
-    "name": "zappy-zap-wtlos",
-    "address": "0xeA96c8d2FFA10FFeF65a87C957C27114051336F4",
-    "decimals": "1e18",
-    "poolId": 0,
-    "chainId": 40,
-    "lp0": {
-      "address": "0x9a271e3748f59222f5581bae2540daa5806b3f77",
-      "oracle": "tokens",
-      "oracleId": "ZAP",
-      "decimals": "1e18"
-    },
-    "lp1": {
-      "address": "0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E",
-      "oracle": "tokens",
-      "oracleId": "WTLOS",
-      "decimals": "1e18"
-    }
-  },
-  {
     "name": "zappy-wtlos-weth",
     "address": "0xA8A2ccbD5B130bd965Dc2C24fc8938AEa7493216",
     "decimals": "1e18",
@@ -73,25 +54,6 @@
       "oracle": "tokens",
       "oracleId": "WETH",
       "decimals": "1e18"
-    }
-  },
-  {
-    "name": "zappy-wtlos-wbtc",
-    "address": "0x2C3dd9b87f5EcD49F6AE3566a5d61D8Ea6Dc21c2",
-    "decimals": "1e18",
-    "poolId": 3,
-    "chainId": 40,
-    "lp0": {
-      "address": "0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E",
-      "oracle": "tokens",
-      "oracleId": "WTLOS",
-      "decimals": "1e18"
-    },
-    "lp1": {
-      "address": "0xf390830DF829cf22c53c8840554B98eafC5dCBc2",
-      "oracle": "tokens",
-      "oracleId": "WBTC",
-      "decimals": "1e8"
     }
   },
   {
