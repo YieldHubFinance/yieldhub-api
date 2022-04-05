@@ -72,7 +72,7 @@
       "address": "0xf390830df829cf22c53c8840554b98eafc5dcbc2",
       "oracle": "tokens",
       "oracleId": "WBTC",
-      "decimals": "1e18"
+      "decimals": "1e8"
     }
   },
   {
