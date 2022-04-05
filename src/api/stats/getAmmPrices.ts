@@ -3,14 +3,16 @@
 import { fetchAmmPrices } from '../../utils/fetchAmmPrices';
 
 import omnidexPools from '../../data/telos/omnidexLpPools.json';
+import zappyPools from '../../data/telos/zappyLpPools.json';
 
 const INIT_DELAY = 0 * 60 * 1000;
 const REFRESH_INTERVAL = 5 * 60 * 1000;
 
 // FIXME: if this list grows too big we might hit the ratelimit on initialization everytime
-// Implement in case of emergency 
+// Implement in case of emergency
 const pools = [
-  ...omnidexPools,
+  ...omnidexPools, 
+  ...zappyPools
 ];
 
 const knownPrices = {
@@ -33,7 +35,7 @@ const updateAmmPrices = async () => {
     });
 
     const lpPrices = ammPrices.then(async ({ poolPrices, _ }) => {
-      return { ...poolPrices, };
+      return { ...poolPrices };
     });
 
     await tokenPrices;

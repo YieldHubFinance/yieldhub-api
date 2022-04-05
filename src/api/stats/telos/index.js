@@ -1,7 +1,9 @@
 const getOmnidexLpApys = require('./getOmnidexLpApys');
+const getZappyLpApys = require('./getZappyLpApys');
 
 const getApys = [
-  getOmnidexLpApys,
+  getOmnidexLpApys, 
+  getZappyLpApys
 ];
 
 const getTelosApys = async () => {
