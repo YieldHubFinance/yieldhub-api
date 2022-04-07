@@ -89,6 +89,27 @@ const getZenMasterData = async () => {
 
 const getPoolsData = async pools => {
   const zenMasterContract = new web3.eth.Contract(ZenMaster, zenmaster);
+
+  const maticPending = await zenMasterContract.methods
+    .pendingCharm('18', '0x17681BfBa3661E92e8Ca7667e41F43452f9cCa2a')
+    .call();
+  console.log('MATIC/WTLOS Pending Charm: ', maticPending * 1e-18);
+
+  const wethPending = await zenMasterContract.methods
+    .pendingCharm('3', '0x472Fa0833A251F06272B69B3298beA134580E1C7')
+    .call();
+  console.log('WETH/WTLOS Pending Charm: ', wethPending * 1e-18);
+
+  const ftmPending = await zenMasterContract.methods
+    .pendingCharm('16', '0xa08A0a4EF661Eb9E17639386EF8e52A711Ebd111')
+    .call();
+  console.log('FTM/WTLOS Pending Charm: ', ftmPending * 1e-18);
+
+  const usdcUsdtPending = await zenMasterContract.methods
+    .pendingCharm('10', '0x4320f6C95Bc72fbaC5BA88a2C619698954B1f977')
+    .call();
+  console.log('USDC/USDT Pending Charm: ', usdcUsdtPending * 1e-18);
+
   const multicall = new MultiCall(web3, multicallAddress(TELOS_CHAIN_ID));
   const balanceCalls = [];
   const allocPointCalls = [];

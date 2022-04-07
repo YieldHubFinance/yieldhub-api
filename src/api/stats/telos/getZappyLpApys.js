@@ -88,6 +88,12 @@ const getMasterChefData = async () => {
 
 const getPoolsData = async pools => {
   const masterchefContract = new web3.eth.Contract(MasterChef, chef);
+
+  const wtlosZapPending = await masterchefContract.methods
+    .pendingZAP('0', '0x00474bb991c6Ee634e68FC2DC8332352b008c52d')
+    .call();
+  console.log('ZAP/WTLOS Pending Zap: ', wtlosZapPending * 1e-18);
+
   const multicall = new MultiCall(web3, multicallAddress(TELOS_CHAIN_ID));
   const balanceCalls = [];
   const allocPointCalls = [];
