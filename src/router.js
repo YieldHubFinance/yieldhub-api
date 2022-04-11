@@ -3,11 +3,12 @@
 const Router = require('koa-router');
 const router = new Router();
 
+const gov = require('./api/stats/gov');
 const noop = require('./api/noop');
+const pools = require('./api/pools');
+const price = require('./api/price');
 const stats = require('./api/stats');
 const supply = require('./api/supply');
-const price = require('./api/price');
-const gov = require('./api/stats/gov');
 const tvl = require('./api/tvl');
 
 router.get('/apy', stats.apy);
@@ -23,6 +24,7 @@ router.get('/earnings', gov.earnings);
 router.get('/holders', gov.holderCount);
 
 router.get('/lps', price.lpsPrices);
+router.get('/lps/summary', pools.summary);
 router.get('/prices', price.tokenPrices);
 
 router.get('/', noop);
