@@ -38,8 +38,8 @@ const MULTICHAIN_RPC: Record<ChainId, string> = {
 
 const TELOS_VAULTS_ENDPOINT = telosPools;
 
-const MULTICHAIN_ENDPOINTS = {
-  telos: TELOS_VAULTS_ENDPOINT,
+const MULTICHAIN_ENDPOINTS: Record<ChainId, any[]> = {
+  [ChainId.telos]: TELOS_VAULTS_ENDPOINT,
 };
 
 const YIELDHUB_PERFORMANCE_FEE = 0.045;
