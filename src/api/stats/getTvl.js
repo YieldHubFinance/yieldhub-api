@@ -1,17 +1,11 @@
 const getChainTvl = require('./getChainTvl.js');
 
-const {
-  AVAX_CHAIN_ID,
-  AVAX_VAULTS_ENDPOINT,
+const { TELOS_CHAIN_ID, TELOS_VAULTS_ENDPOINT } = require('../../constants');
 
-  TELOS_CHAIN_ID,
-  TELOS_VAULTS_ENDPOINT,
-} = require('../../constants');
-
-const INIT_DELAY = 40 * 1000;
+const INIT_DELAY = 0;
 const REFRESH_INTERVAL = 15 * 60 * 1000;
 
-let tvl = {};
+let cache;
 
 const chains = [
   {
@@ -20,12 +14,14 @@ const chains = [
   },
 ];
 
-const getTvl = () => {
-  return tvl;
+const getTvl = async () => {
+  return await cache;
 };
 
 const updateTvl = async () => {
   console.log('> updating tvl');
+
+  let tvl = {};
 
   try {
     let promises = [];
@@ -47,9 +43,19 @@ const updateTvl = async () => {
     console.error('> tvl initialization failed', err);
   }
 
+  cache = Promise.resolve(tvl);
+
   setTimeout(updateTvl, REFRESH_INTERVAL);
+
+  return tvl;
 };
 
-setTimeout(updateTvl, INIT_DELAY);
+const init =
+  // Flexible delayed initialization used to work around ratelimits
+  new Promise((resolve, reject) => {
+    setTimeout(resolve, INIT_DELAY);
+  }).then(updateTvl);
+
+cache = init.then(response => response);
 
 module.exports = getTvl;
