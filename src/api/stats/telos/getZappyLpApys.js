@@ -94,6 +94,16 @@ const getPoolsData = async pools => {
     .call();
   console.log('ZAP/WTLOS Pending Zap: ', wtlosZapPending * 1e-18);
 
+  const ftmZapPending = await masterchefContract.methods
+    .pendingZAP('8', '0x289dbfA6445fe489D3cf9dFaF4Fa190F4f08a764')
+    .call();
+  console.log('FTM/WTLOS Pending Zap: ', ftmZapPending * 1e-18);
+
+  const wtlosUsdtPendingZap = await masterchefContract.methods
+    .pendingZAP('6', '0xaeB0a3766d74cef37a3902570B45F715eD734740')
+    .call();
+  console.log('USDT/WTLOS Pending Zap: ', wtlosUsdtPendingZap * 1e-18);
+
   const multicall = new MultiCall(web3, multicallAddress(TELOS_CHAIN_ID));
   const balanceCalls = [];
   const allocPointCalls = [];

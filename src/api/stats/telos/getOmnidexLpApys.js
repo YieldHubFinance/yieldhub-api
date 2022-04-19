@@ -96,7 +96,7 @@ const getPoolsData = async pools => {
   console.log('MATIC/WTLOS Pending Charm: ', maticPending * 1e-18);
 
   const wethPending = await zenMasterContract.methods
-    .pendingCharm('3', '0x472Fa0833A251F06272B69B3298beA134580E1C7')
+    .pendingCharm('3', '0x249fbC02F68420dFB36f3908cA9D4aB9682848DC')
     .call();
   console.log('WETH/WTLOS Pending Charm: ', wethPending * 1e-18);
 
