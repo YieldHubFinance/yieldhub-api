@@ -1,9 +1,8 @@
 const { getTelosApys } = require('./telos');
 
-const INIT_DELAY = 0;
 const REFRESH_INTERVAL = 15 * 60 * 1000;
 
-let cache;
+let cache = Promise.resolve({ apys: {}, apyBreakdowns: {} });
 
 const getApys = async () => {
   return await cache;
@@ -12,8 +11,10 @@ const getApys = async () => {
 const updateApys = async () => {
   console.log('> updating apys');
 
-  let apys = {};
-  let apyBreakdowns = {};
+  let previous = await cache;
+
+  let apys = { ...previous.apys };
+  let apyBreakdowns = { ...previous.apyBreakdowns };
 
   try {
     const results = await Promise.allSettled([getTelosApys()]);
@@ -51,6 +52,8 @@ const updateApys = async () => {
     console.log('> updated apys');
   } catch (err) {
     console.error('> apy initialization failed', err);
+  } finally {
+    setTimeout(updateApys, REFRESH_INTERVAL);
   }
 
   let result = {
@@ -60,17 +63,9 @@ const updateApys = async () => {
 
   cache = Promise.resolve(result);
 
-  setTimeout(updateApys, REFRESH_INTERVAL);
-
   return result;
 };
 
-const init =
-  // Flexible delayed initialization used to work around ratelimits
-  new Promise((resolve, reject) => {
-    setTimeout(resolve, INIT_DELAY);
-  }).then(updateApys);
-
-cache = init.then(response => response);
+cache = updateApys();
 
 module.exports = { getApys };

@@ -63,7 +63,7 @@ const fetchAmmPrices = async (pools, knownPrices) => {
       } catch (e) {
         console.error('fetchAmmPrices', e);
       }
-      
+
       // Merge fetched data
       for (let j = 0; j < batch.length; j++) {
         filtered[j + i].totalSupply = new BigNumber(buf[j * 3 + 0]?.toString());
