@@ -11,15 +11,8 @@ const TLOS = {
 } as const;
 
 const _tokens = {
-  WTLOS: {
-    chainId: 40,
-    address: '0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E',
-    symbol: 'WTLOS',
-    name: 'Wrapped TLOS',
-    logoURI:
-      'https://raw.githubusercontent.com/telosnetwork/images/master/logos_2021/Symbol%202.svg',
-    decimals: 18,
-  },
+  TLOS: TLOS,
+  WTLOS: TLOS,
   WBTC: {
     name: 'Wrapped BTC',
     symbol: 'WBTC',
