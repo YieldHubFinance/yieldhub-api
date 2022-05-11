@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "install-all": "yarn && cd packages/address-book && yarn",
+    "install": "echo \"\n ----you need to run yarn install-all, not yarn install----\n\"",
     "start": "node dist/src/app.js",
     "dev": "nodemon -e js,ts,json src/app.ts",
     "build": "tsc -p .",
