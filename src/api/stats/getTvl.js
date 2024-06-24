@@ -2,10 +2,9 @@ const getChainTvl = require('./getChainTvl.js');
 
 const { TELOS_CHAIN_ID, TELOS_VAULTS_ENDPOINT } = require('../../constants');
 
-const INIT_DELAY = 0;
 const REFRESH_INTERVAL = 15 * 60 * 1000;
 
-let cache;
+let cache = Promise.resolve({});
 
 const chains = [
   {
@@ -21,7 +20,7 @@ const getTvl = async () => {
 const updateTvl = async () => {
   console.log('> updating tvl');
 
-  let tvl = {};
+  let tvl = await cache;
 
   try {
     let promises = [];
@@ -41,21 +40,15 @@ const updateTvl = async () => {
     console.log('> updated tvl');
   } catch (err) {
     console.error('> tvl initialization failed', err);
+  } finally {
+    setTimeout(updateTvl, REFRESH_INTERVAL);
   }
 
   cache = Promise.resolve(tvl);
 
-  setTimeout(updateTvl, REFRESH_INTERVAL);
-
   return tvl;
 };
 
-const init =
-  // Flexible delayed initialization used to work around ratelimits
-  new Promise((resolve, reject) => {
-    setTimeout(resolve, INIT_DELAY);
-  }).then(updateTvl);
-
-cache = init.then(response => response);
+cache = updateTvl();
 
 module.exports = getTvl;

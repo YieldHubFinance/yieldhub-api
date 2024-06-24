@@ -64,6 +64,4 @@ const getVaultBalances = async (chainId, vaults) => {
   return res[0].map(v => new BigNumber(v.balance));
 };
 
-
-
 module.exports = getChainTvl;

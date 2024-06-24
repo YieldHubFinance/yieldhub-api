@@ -5,7 +5,6 @@ import { fetchAmmPrices } from '../../utils/fetchAmmPrices';
 import omnidexPools from '../../data/telos/omnidexLpPools.json';
 import zappyPools from '../../data/telos/zappyLpPools.json';
 
-const INIT_DELAY = 0;
 const REFRESH_INTERVAL = 5 * 60 * 1000;
 
 // FIXME: if this list grows too big we might hit the ratelimit on initialization everytime
@@ -17,8 +16,8 @@ const knownPrices = {
   USDC: 1,
 };
 
-let tokenPricesCache: Promise<any>;
-let lpPricesCache: Promise<any>;
+let tokenPricesCache: Promise<any> = Promise.resolve({});
+let lpPricesCache: Promise<any> = Promise.resolve({});
 
 const updateAmmPrices = async () => {
   console.log('> updating amm prices');
@@ -46,7 +45,12 @@ const updateAmmPrices = async () => {
       lpPrices,
     };
   } catch (err) {
+    // If we error out, log error and return empty results without updating cache.
     console.error(err);
+    return {
+      tokenPrices: {},
+      lpPricesCache: {},
+    };
   } finally {
     setTimeout(updateAmmPrices, REFRESH_INTERVAL);
     console.log('> updated amm prices');
@@ -77,11 +81,7 @@ export const getAmmLpPrice = async lpName => {
   console.error(`Unknown liquidity pair '${lpName}'. Consider adding it to .json file`);
 };
 
-const init =
-  // Flexible delayed initialization used to work around ratelimits
-  new Promise((resolve, reject) => {
-    setTimeout(resolve, INIT_DELAY);
-  }).then(updateAmmPrices);
+const init = updateAmmPrices();
 
 tokenPricesCache = init.then(({ tokenPrices, lpPrices }) => tokenPrices);
 lpPricesCache = init.then(({ tokenPrices, lpPrices }) => lpPrices);
